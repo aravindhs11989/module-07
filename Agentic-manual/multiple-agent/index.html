@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Agent To-Do Workflow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <p class="kicker">Agentic Manual Front-End</p>
+        <h1>Multi-Agent To-Do Team</h1>
+        <p class="subtitle">Five specialized agents coordinate through explicit thread handoffs.</p>
+      </header>
+
+      <section class="layout">
+        <form id="todo-form" class="panel input-panel">
+          <div class="panel-head">
+            <h2>Raw To-Do Input</h2>
+            <button id="sample-btn" type="button" class="btn secondary">Load Sample</button>
+          </div>
+          <textarea id="todo-input" rows="10"></textarea>
+          <p id="error" class="error" aria-live="polite"></p>
+          <button class="btn primary" type="submit">Run Multi-Agent Workflow</button>
+        </form>
+
+        <section class="panel thread-panel">
+          <div class="panel-head">
+            <h2>Agent Threads</h2>
+            <span id="thread-count" class="tag">0 threads</span>
+          </div>
+          <div id="threads" class="threads"></div>
+        </section>
+      </section>
+
+      <section class="panel board-panel">
+        <div class="panel-head">
+          <h2>Final Prioritized Task Board</h2>
+        </div>
+        <div class="lanes">
+          <article class="lane" id="lane-today">
+            <h3>Today</h3>
+            <ul></ul>
+          </article>
+          <article class="lane" id="lane-thisWeek">
+            <h3>This Week</h3>
+            <ul></ul>
+          </article>
+          <article class="lane" id="lane-later">
+            <h3>Later</h3>
+            <ul></ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

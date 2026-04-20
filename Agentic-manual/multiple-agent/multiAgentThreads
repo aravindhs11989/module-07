@@ -1,0 +1,49 @@
+{
+  "threads": [
+    {
+      "id": "intakeThread",
+      "title": "Intake Thread",
+      "agent": "Intake Agent",
+      "input": "Raw to-do text",
+      "decision": "Keep non-empty task lines and normalize separators.",
+      "output": "Parsed tasks",
+      "handoff": "priorityThread"
+    },
+    {
+      "id": "priorityThread",
+      "title": "Priority Thread",
+      "agent": "Priority Agent",
+      "input": "Parsed tasks",
+      "decision": "Score urgency and importance, assign categories.",
+      "output": "Enriched tasks",
+      "handoff": "scheduleThread"
+    },
+    {
+      "id": "scheduleThread",
+      "title": "Schedule Thread",
+      "agent": "Scheduling Agent",
+      "input": "Enriched tasks",
+      "decision": "Group tasks into today, thisWeek, and later.",
+      "output": "Draft board",
+      "handoff": "reviewThread"
+    },
+    {
+      "id": "reviewThread",
+      "title": "Review Thread",
+      "agent": "Review Agent",
+      "input": "Draft board",
+      "decision": "Detect overload, vague tasks, and missing owner details.",
+      "output": "Warnings",
+      "handoff": "coordinatorThread"
+    },
+    {
+      "id": "coordinatorThread",
+      "title": "Coordinator Thread",
+      "agent": "Coordinator Agent",
+      "input": "All thread handoffs",
+      "decision": "Apply notes and publish final board.",
+      "output": "Final workflow response",
+      "handoff": "Completed"
+    }
+  ]
+}

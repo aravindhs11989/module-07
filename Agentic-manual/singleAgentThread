@@ -1,0 +1,50 @@
+{
+  "id": "singleAgentThread",
+  "title": "Single Agent Thread",
+  "agent": "Single Agent",
+  "purpose": "Own the entire to-do planning workflow from raw input to reviewed task board.",
+  "stages": [
+    {
+      "title": "Understanding",
+      "input": "Raw to-do text",
+      "decision": "Clean and normalize task candidates.",
+      "output": "Parsed non-empty tasks",
+      "handoff": "Planning"
+    },
+    {
+      "title": "Planning",
+      "input": "Parsed tasks",
+      "decision": "Score urgency/importance, assign category and priority, detect risk flags.",
+      "output": "Enriched tasks",
+      "handoff": "Executing"
+    },
+    {
+      "title": "Executing",
+      "input": "Enriched tasks",
+      "decision": "Place tasks into today/thisWeek/later lanes.",
+      "output": "Draft task board",
+      "handoff": "Reviewing"
+    },
+    {
+      "title": "Reviewing",
+      "input": "Draft task board",
+      "decision": "Check overload, vagueness, and missing owner details.",
+      "output": "Warnings and review notes",
+      "handoff": "Adjusting"
+    },
+    {
+      "title": "Adjusting",
+      "input": "Review warnings",
+      "decision": "Annotate risky tasks without disrupting useful placement.",
+      "output": "Adjusted task board",
+      "handoff": "Completed"
+    },
+    {
+      "title": "Completed",
+      "input": "Adjusted task board",
+      "decision": "Publish final board and full single-thread audit trail.",
+      "output": "API response payload",
+      "handoff": "singleAgentThread"
+    }
+  ]
+}

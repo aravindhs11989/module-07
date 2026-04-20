@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single-Agent To-Do Workflow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-glow"></div>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="kicker">Agentic Manual Front-End</p>
+          <h1>Single-Agent To-Do Workflow</h1>
+          <p class="subtitle">One thread (`singleAgentThread`) handles understanding, planning, execution, review, adjustment, and completion.</p>
+        </div>
+      </header>
+
+      <section class="content-grid">
+        <form id="todo-form" class="panel input-panel">
+          <div class="panel-head">
+            <h2>Raw To-Do Input</h2>
+            <button id="load-sample" class="btn ghost" type="button">Load Sample</button>
+          </div>
+          <textarea id="todo-input" rows="12" placeholder="Enter one task per line, or separate by commas/semicolons."></textarea>
+          <p id="error" class="error" aria-live="polite"></p>
+          <button class="btn primary" type="submit">Run Single-Agent Workflow</button>
+        </form>
+
+        <section class="panel thread-panel" aria-live="polite">
+          <div class="panel-head">
+            <h2>Thread: <code>singleAgentThread</code></h2>
+            <span id="stage-count" class="pill">0 stages</span>
+          </div>
+          <div id="stages" class="stages"></div>
+        </section>
+      </section>
+
+      <section class="panel board-panel">
+        <div class="panel-head">
+          <h2>Final Prioritized Task Board</h2>
+        </div>
+        <div class="lanes">
+          <article class="lane" id="lane-today">
+            <h3>Today</h3>
+            <ul></ul>
+          </article>
+          <article class="lane" id="lane-thisWeek">
+            <h3>This Week</h3>
+            <ul></ul>
+          </article>
+          <article class="lane" id="lane-later">
+            <h3>Later</h3>
+            <ul></ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

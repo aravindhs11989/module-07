@@ -1,0 +1,17 @@
+{
+  "name": "todo-agent-workflow-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5174",
+    "build": "vite build",
+    "preview": "vite preview --port 4174"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
